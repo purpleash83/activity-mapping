@@ -1,99 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	
-    <title>OSM Maps API | Basic Map ZXY (EPSG:3857) | Leaflet</title>
-	
-	<!--========================
-	Load the Leaflet CSS file 
-	==========================-->
-	
-	<link 
-		rel="stylesheet" 
-		href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
-		integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" 
-	/>
-
-	 <!--========================
-	 Add the Ordnance Survey Styling
-	 ==========================-->
-	 
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/OrdnanceSurvey/os-api-branding@0.3.1/os-api-branding.css" />
-    <!-- <script src="https://cdn.jsdelivr.net/gh/OrdnanceSurvey/os-api-branding@0.3.1/os-api-branding.js"></script>
-    -->
-	
-	<style>
-
-		/* =========================
-        Set the map container size and style
-        ========================= */
-		
-        body { margin:0; padding:0; }
-        #map { position:absolute; top:0; bottom:0; width:100%; }
-		
-	</style>
-	
-</head>
-
-<body>
-
-	<!--========================
-	Create a div element to hold the map
-	 ==========================-->
-	<div id="map"></div>
-
-    <script
-        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-        crossorigin=""
-    ></script>
-
-	<script type="module">
-		
-		const mapOptions = {
-			minZoom: 7,
-			maxZoom: 20,
-			center: [ 54.425, -2.968 ],  // starting point
-			zoom: 14,
-			maxBounds: [
-				[ 49.528423, -10.76418 ], // southwest
-				[ 61.331151, 1.9134116 ] // northeast
-			],
-
-		};
-		
-        // =========================
-        // Map initialisation
-        // =========================
-		
-		//const L = await import('leaflet')
-		
-		const map = L.map("map", mapOptions);
-		
-        // =========================
-        // OS tiles API key
-        // =========================
-		
-		const osKey = "eqTDoR85tAuOsDlnZJ1IQqOvDhHfMrlJ";
-		const osAttribution = "Contains OS data © Crown copyright and database rights 2026";
-		
-        // =========================
-        // Load and display OS raster layers on the map
-        // =========================
-        
-        // OS Outdoor
-        const osOutdoor = L.tileLayer(
-            `https://api.os.uk/maps/raster/v1/zxy/Outdoor_27700/{z}/{x}/{y}.png?key=${osKey}`,
-            {
-                opacity: 1
-            }
-        ).addTo(map); // add as default
-
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@2.0.0-beta.4/dist/leaflet.css">
+	<script type="importmap">
+		{"imports": {"leaflet": "https://cdn.jsdelivr.net/npm/leaflet@2.0.0-beta.4/dist/leaflet.js"}}
 	</script>
-
+</head>
+<body>
+	<div id="map" style="height: 400px"></div>
+	<script type="module">
+		import {LeafletMap, TileLayer} from 'leaflet';
+		// the map code goes here
+		const map = new LeafletMap('map').setView([51.505, -0.09], 13);
+		
+		new TileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			maxZoom: 19,
+			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+		}).addTo(map);
+					
+	</script>
 </body>
 </html>
