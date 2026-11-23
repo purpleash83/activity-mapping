@@ -46,6 +46,15 @@
     	});
     	basemap.addTo(map);
 
+	    //add a marker for the Scott Monument with a tooltip
+            // Coordinates: 55.95244818413498, -3.193294352353974
+    	var marker = new L.marker([38.541112, -121.749350], {
+        	opacity: 1.0   //teardrop marker opacity may be set to zero
+        	});             
+        	marker.bindTooltip("<b>Scott Monument</b>", { });
+        	marker.addTo(map);
+    
+
   </script>
 
 </body>
