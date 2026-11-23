@@ -48,13 +48,14 @@
 
 	    //add a marker for the Glentress
             // Coordinates: 55.64574450163974, -3.1371999102424577
-    	var marker = new L.marker([55.64574450163974, -3.1371999102424577]);  
+    	var marker = new L.marker([55.64574450163974, -3.1371999102424577]);
+			marker.bindTooltip("<b>Glentress</b>", { });
         	marker.addTo(map);
     
     	//var marker = new L.marker([55.64574450163974, -3.1371999102424577], {
         //	opacity: 1.0   //teardrop marker opacity may be set to zero
         //	});             
-        //	marker.bindTooltip("<b>Glentress</b>", { });
+        //	
         //	marker.addTo(map);
   </script>
 
