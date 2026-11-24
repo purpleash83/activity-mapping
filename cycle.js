@@ -1,6 +1,6 @@
-var cycleGlentressGeoJSON = [{
+var cycle = [{
   "type": "FeatureCollection",
-  "name": "cycleGlentressGeoJSON",
+  "name": "cycle",
   "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
   "features": [
     
