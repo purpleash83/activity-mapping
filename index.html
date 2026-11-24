@@ -63,7 +63,10 @@
         	fillOpacity: 0.6
       		};
     	}
-
+        
+		var actiivty = new L.LayerGroup();
+        L.geoJson(cycle, {style: style}).addTo(activity);
+      	
     	L.geoJson(cycle, { style: style }).addTo(map);
 
   </script>
