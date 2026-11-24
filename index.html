@@ -53,16 +53,16 @@
         	marker.addTo(map);
 
 		// styling function for our GeoJSON layer, fillColor depends on feature.properties.PERCENTAGE property
-    	//function style(feature) {
-     	//	return {
-        	//fillColor: getColor(feature.properties.PERCENTAGE),
-        	//weight: 2,
-        	//opacity: 1,
-        	//color: 'grey',
-        	//dashArray: '3',
-        	//fillOpacity: 0.6
-      		//};
-    	//}
+    	function style(feature) {
+     		return {
+        	fillColor: getColor(feature.properties.PERCENTAGE),
+        	weight: 2,
+        	opacity: 1,
+        	color: 'grey',
+        	dashArray: '3',
+        	fillOpacity: 0.6
+      		};
+    	}
 
     	L.geoJson(cycle, { style: style }).addTo(map);
 
