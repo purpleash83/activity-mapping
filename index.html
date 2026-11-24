@@ -52,23 +52,9 @@
 			marker.bindTooltip("<b>Glentress</b>", { });
         	marker.addTo(map);
 
-		// styling function for our GeoJSON layer, fillColor depends on feature.properties.PERCENTAGE property
-    	function style(feature) {
-     		return {
-        	fillColor: getColor(feature.properties.PERCENTAGE),
-        	weight: 2,
-        	opacity: 1,
-        	color: 'grey',
-        	dashArray: '3',
-        	fillOpacity: 0.6
-      		};
-    	}
-        
-		var activity = new L.LayerGroup();
-        L.geoJson(cycle, {style: style}).addTo(activity);
-      	
-    	L.geoJson(cycle, { style: style }).addTo(map);
-
+		// adding cycle layer to the map
+    	L.geoJson(cycle).addTo(map);
+      
   </script>
 
 </body>
