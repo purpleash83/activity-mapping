@@ -54,17 +54,18 @@
 			marker.bindTooltip("<b>Glentress</b>", { });
         	marker.addTo(map);
 
-    	// get colour depending on  activity
+    	// get color depending on  activity
     	function getColor(d) {
-      	return d = walk ? '#87F527' :
-        	d = cycles ? '#F54927';
-    }
+      	return d = hiking ? '#87F527' :
+        	d = cycling ? '#F54927' :
+				d = mountain_biking ? '#F54927';
+    	}
 
 
-    	// styling function for our GeoJSON layer, fillColor depends on feature.properties.PERCENTAGE property
+    	// styling function for the layer, color depends on feature.properties.type property
     	function style(feature) {
       	return {
-        	color: getColor(feature.properties.PERCENTAGE),
+        	color: getColor(feature.properties.type),
         	weight: 4,
         	opacity: 1,
       		};
