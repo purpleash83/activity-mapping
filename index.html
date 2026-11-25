@@ -54,17 +54,20 @@
 			marker.bindTooltip("<b>Glentress</b>", { });
         	marker.addTo(map);
 
-		// adding cycle layer to the map and styling it
-    	//L.geoJSON(cycles, {
-    	//style:  {
-         //       color: "F54927",
-         //       weight: 1,
-          //      fillOpacity: 0.2,
-    	//		};
-		//	}.addTo(map);
+		// styling function for cycles layer, fillColor depends on feature.properties.PERCENTAGE property
+    	function style(feature) {
+	    return {
+        	fillColor: "#F54927",
+        	weight: 2,
+        	opacity: 1,
+        	color: 'grey',
+      		};
+    	}
+
+    	L.geoJson(cycles, { style: style }).addTo(map);
 
 		// adding cycle layer to the map
-    	L.geoJSON(cycles).addTo(map);
+    	//L.geoJSON(cycles).addTo(map);
 
 
 
