@@ -52,10 +52,10 @@
 			marker.bindTooltip("<b>Glentress</b>", { });
         marker.addTo(map);
 		
-		//L.geoJson(cycles).addTo(map);
+		L.geoJson(cycles).addTo(map);
 
 		// cycles style
-		cont cyclesStyle = {
+		const cyclesStyle = {
 				color: '#F54927',
         		weight: 4,
         		opacity: 1
