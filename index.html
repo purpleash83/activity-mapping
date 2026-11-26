@@ -47,8 +47,7 @@
     	});
     	basemap.addTo(map);
 
-	    //add a marker for the Glentress
-        // Coordinates: 55.64574450163974, -3.1371999102424577
+	    //add a marker for the Glentress (coordinates: 55.64574450163974, -3.1371999102424577)
     	var marker = new L.marker([55.64574450163974, -3.1371999102424577]);
 			marker.bindTooltip("<b>Glentress</b>", { });
         	marker.addTo(map);
@@ -58,23 +57,23 @@
     	L.geoJson(walks).addTo(map);
 		
     	// get color depending on activity
-    	function getColor(d) {
-      		return d == hiking ? '#87F527' :
-        		d == cycling ? '#F54927' :
-					d == mountain_biking ? '#F54927';
-    	}
+    	//function getColor(d) {
+      		//return d == hiking ? '#87F527' :
+        		//d == cycling ? '#F54927' :
+					//d == mountain_biking ? '#F54927';
+    	//}
 
     	// styling function for the layer, color depends on feature.properties.type property
-    	function style(feature) {
-      		return {
-        		color: getColor(feature.properties.type),
-        		weight: 4,
-        		opacity: 1,
-      			};
-    	}
+    	//function style(feature) {
+      		//return {
+        		//color: getColor(feature.properties.type),
+        		//weight: 4,
+        		//opacity: 1,
+      			//};
+    	//}
 		
-    	L.geoJson(cycles, {style: style}).addTo(map);
-    	L.geoJson(walks, {style: style}).addTo(map);
+    	//L.geoJson(cycles, {style: style}).addTo(map);
+    	//L.geoJson(walks, {style: style}).addTo(map);
 		
 		// styling function for cycles layer
     	//function style(feature) {
