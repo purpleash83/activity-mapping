@@ -72,7 +72,7 @@
 				//color: '#F54927',
         		//weight: 4,
         		//opacity: 1
-		};
+		//};
 	
 		// adding cycles and walks layers to the map
     	//L.geoJson(cycles, { style: cyclesStyle }).addTo(map);
@@ -96,7 +96,7 @@
     	}
 		
     	L.geoJson(cycles, {style: style}).addTo(map);
-    	//L.geoJson(walks, {style: style}).addTo(map);
+    	L.geoJson(walks, {style: style}).addTo(map);
 		
 		// styling function for cycles layer
     	//function style(feature) {
