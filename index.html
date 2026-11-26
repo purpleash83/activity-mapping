@@ -51,10 +51,12 @@
     	var marker = new L.marker([55.64574450163974, -3.1371999102424577]);
 			marker.bindTooltip("<b>Glentress</b>", { });
         	marker.addTo(map);
-
+		
+		L.geoJson(cycles).addTo(map);
+		
 		// adding cycles and walks layers to the map
     	L.geoJson(cycles, {
-				  style:{
+				  style: {
 					color: '#F54927',
         			weight: 4,
         			opacity: 1
