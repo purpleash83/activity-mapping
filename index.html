@@ -59,17 +59,17 @@
     	// get color depending on activity
     	function getColor(d) {
       		return d == hiking ? '#87F527' :
-        		d == cycling ? '#F54927' :
-					d == mountain_biking ? '#F54927';
-    	};
+        		   d == cycling ? '#F54927' :
+				   d == mountain_biking ? '#F54927';
+    	}
 
     	// styling function for the layer, color depends on feature.properties.type property
     	//function style(feature) {
       		//return {
         		//color: getColor(feature.properties.type),
         		//weight: 4,
-        		//opacity: 1,
-      			//};
+        		//opacity: 1
+      		//};
     	//}
 		
     	//L.geoJson(cycles, {style: style}).addTo(map);
