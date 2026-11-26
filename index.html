@@ -65,43 +65,38 @@
         marker.addTo(map);
 		
 		L.geoJson(cycles).addTo(map);
-
+		L.geoJson(walks).addTo(map);
+		
 		// cycles style
-		const cyclesStyle = {
-				color: '#F54927',
-        		weight: 4,
-        		opacity: 1
+		//const cyclesStyle = {
+				//color: '#F54927',
+        		//weight: 4,
+        		//opacity: 1
 		};
 	
 		// adding cycles and walks layers to the map
-    	L.geoJson(cycles, { style: cyclesStyle }).addTo(map);
+    	//L.geoJson(cycles, { style: cyclesStyle }).addTo(map);
 
 
-
-
-
-
-		
-    	//L.geoJson(walks).addTo(map);
-		
+			
     	// get color depending on activity
-    	//function getColor(d) {
-      		//return d == hiking ? '#87F527' :
-        		   //d == cycling ? '#F54927' :
-				   //d == mountain_biking ? '#F54927';
-    	//}
+    	function getColor(d) {
+      		return d == hiking ? '#87F527' :
+        		   d == cycling ? '#F54927' :
+				   d == mountain_biking ? '#F54927';
+    	}
 
     	// styling function for the layer, color depends on feature.properties.type property
-    	//function style(feature) {
-      		//return {
-        		//color: getColor(feature.properties.type),
-        		//weight: 4,
-        		//opacity: 1
-      		//};
-    	//}
+    	function style(feature) {
+      		return {
+        		color: getColor(feature.properties.type),
+        		weight: 4,
+        		opacity: 1
+      		};
+    	}
 		
-    	//L.geoJson(cycles, {style: style}).addTo(map);
-    	//L.geoJson(walks, {style: style}).addTo(map);
+    	L.geoJson(cycles, {style: style}).addTo(map);
+    	L.geoJson(walks, {style: style}).addTo(map);
 		
 		// styling function for cycles layer
     	//function style(feature) {
