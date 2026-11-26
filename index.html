@@ -14,9 +14,7 @@
 		href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
 		integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""
 	/>
-	
-
-	
+		
 	<style>
 		#map {position: absolute; top: 0; bottom: 0; left: 0; right: 0;}
 	</style>	
@@ -55,44 +53,35 @@
 			marker.bindTooltip("<b>Glentress</b>", { });
         	marker.addTo(map);
 
-    	// get color depending on  activity
-    	//function getColor(d) {
-      	//return d = hiking ? '#87F527' :
-        	//d = cycling ? '#F54927' :
-				//d = mountain_biking ? '#F54927';
-    	//}
-
+    	// get color depending on activity
+    	function getColor(d) {
+      		return d = hiking ? '#87F527' :
+        		d = cycling ? '#F54927' :
+					d = mountain_biking ? '#F54927';
+    	};
 
     	// styling function for the layer, color depends on feature.properties.type property
-    	//function style(feature) {
-      	//return {
-        	//color: getColor(feature.properties.type),
-        	//weight: 4,
-        	//opacity: 1,
-      		//};
-    	//}
+    	function style(feature) {
+      		return {
+        		color: getColor(feature.properties.type),
+        		weight: 4,
+        		opacity: 1,
+      			}
+    	};
 
-
-	
-
-
-		
 		// styling function for cycles layer
     	//function style(feature) {
 	    //return {
         	//color: "#F54927",
         	//weight: 4,
         	//opacity: 1
-      		//};
-    	//}
+      		//}
+    	//};
 		
 		// adding cycles and walks layers to the map
-    	L.geoJson(cycles).addTo(map);
-    	L.geoJson(walks).addTo(map);
+    	L.geoJson(cycles, { style: style }).addTo(map);
+    	L.geoJson(walks, { style: style }).addTo(map);
 
-
-
-		
         // Panes for map layer ordering
         //map.createPane("cyclesPane");
 		
